@@ -1,0 +1,22 @@
+semaphore {
+    .semaphore-outer {
+        display: inner-block;
+        width: 48px;
+        height: 48px;
+        border-radius: 5px;
+        padding: 3px;
+        background-color: #f4f4f4;
+        border: 1px solid #dcdcdc;
+        color: #fff;
+    }
+ 
+    .semaphore-inner {
+        min-width: 15%;
+        min-height: 15%;
+        width:100%;
+        height:100%;
+        overflow: hidden;
+        padding: 5px;
+        border-radius: 50%;
+    }
+}
