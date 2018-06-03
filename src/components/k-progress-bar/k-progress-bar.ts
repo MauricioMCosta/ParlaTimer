@@ -7,10 +7,10 @@ import { Component, Input } from '@angular/core';
  * Components.
  */
 @Component({
-  selector: 'progress-bar',
-  templateUrl: 'progress-bar.html'
+  selector: 'k-progress-bar',
+  templateUrl: 'k-progress-bar.html'
 })
-export class ProgressBarComponent {
+export class KProgressBarComponent {
   @Input('progress') progress=23;
 
   constructor() {

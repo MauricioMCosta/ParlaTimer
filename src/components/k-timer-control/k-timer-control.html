@@ -1,0 +1,13 @@
+<!-- Generated template for the KTimerControlComponent component -->
+<ion-grid align-items-center>
+  <ion-row justify-content-center >
+    <span class='text'>&nbsp;{{text}}&nbsp;</span>
+  </ion-row>
+  <ion-row justify-content-center >
+    <ion-buttons>
+      <button ion-button [disabled]='isRunning||disabled' (click)="start($event)">start</button>
+      <button ion-button [disabled]='!isRunning||disabled' (click)="stop($event)">stop</button>
+      <button ion-button [disabled]='isRunning||disabled' (click)="reset($event)">reset</button>
+    </ion-buttons>
+  </ion-row>
+</ion-grid>

@@ -14,20 +14,31 @@
 
 
 <ion-content padding>
-    <ion-item>
+  <ion-grid>
+    <ion-row>
+      <ion-item>
         <ion-label>Preset</ion-label>
         <ion-select [(ngModel)]="selectedPreset">
-          <ion-option *ngFor="let preset of presets" [value]="preset">{{preset.text}}</ion-option>
+          <ion-option *ngFor="let preset of presets" [value]="preset" (ionSelect)='onPresetSelected(preset)'>{{preset.text}}</ion-option>
         </ion-select>
-      
       </ion-item>
-     
-       
-        <progress-bar [progress]="loadProgress"></progress-bar>
-        <div style="float:left">
-        <semaphore [color]="color"></semaphore>
-        <semaphore [color]="color"></semaphore>
-        <semaphore [color]="color"></semaphore>
-      </div>
-      {{ selectedPreset | json}}
+    </ion-row>
+    <ion-row>
+      <ion-card *ngIf='selectedPreset!=null'>
+        <ion-card-title>{{selectedPreset.text}}</ion-card-title>
+      </ion-card>
+      <ion-card *ngIf='selectedPreset==null'>
+        <ion-card-content>
+          <p>You need to select a preset first</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+    <ion-row justify-content-center align-items-center style="height: 100%">
+      <semaphore [color]="color"></semaphore>
+    </ion-row>
+  </ion-grid>
+
+  <k-timer-control [(timeouts)]='timerTimeouts' [disabled]='isStartButtonDisabled()' counter="0" (onTimeout)='onTimerTimeOut($event)'
+    (onReset)='onTimerReset($event)'></k-timer-control>
+
 </ion-content>

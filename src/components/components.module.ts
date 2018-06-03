@@ -1,11 +1,26 @@
-import { NgModule } from '@angular/core';
-import { ProgressBarComponent } from './progress-bar/progress-bar';
+import { IonicModule } from 'ionic-angular';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
+
+import { KProgressBarComponent } from './k-progress-bar/k-progress-bar';
 import { SemaphoreComponent } from './semaphore/semaphore';
+import { KTimerControlComponent } from './k-timer-control/k-timer-control';
 @NgModule({
-	declarations: [ProgressBarComponent,
-    SemaphoreComponent],
-	imports: [],
-	exports: [ProgressBarComponent,
-    SemaphoreComponent]
+    declarations:
+        [
+            KProgressBarComponent,
+            SemaphoreComponent,
+            KTimerControlComponent
+        ],
+    imports: [IonicModule],
+    exports:
+        [
+            KProgressBarComponent,
+            SemaphoreComponent,
+            KTimerControlComponent
+        ],
+    schemas:
+        [
+            CUSTOM_ELEMENTS_SCHEMA
+        ]
 })
-export class ComponentsModule {}
+export class ComponentsModule { }
